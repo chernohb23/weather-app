@@ -4,7 +4,12 @@ import com.weather.demo.weather_app.domain.CityCoordinates;
 import com.weather.demo.weather_app.domain.WeatherRequestDetails;
 import com.weather.demo.weather_app.entity.GeocodingCoordinatesEntity;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @Service
 public class GeocodingProvider {
@@ -16,6 +21,18 @@ public class GeocodingProvider {
     private String geocodingUrl;
 
     public GeocodingCoordinatesEntity getCoordinates(final WeatherRequestDetails weatherRequestDetails){
+        // geocoding api call
 
+        RestTemplate restTemplate = new RestTemplate();
+
+        final ResponseEntity<GeocodingCoordinatesEntity[]> responseEntity;
+
+        HttpEntity<String> requestEntity = new HttpEntity<>((String) null); // dude
+
+        UriComponents uri = UriComponentsBuilder.fromUriString(geocodingUrl)
+                .queryParam("q", weatherRequestDetails.getCity())
+                .queryParam("limt", "1")
+                .queryParam("appid", apiKey)
+                .build();
     }
 }
