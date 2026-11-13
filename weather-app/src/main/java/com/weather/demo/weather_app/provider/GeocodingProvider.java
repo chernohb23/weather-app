@@ -33,7 +33,7 @@ public class GeocodingProvider {
 
         UriComponents uri = UriComponentsBuilder.fromUriString(geocodingUrl)
                 .queryParam("q", weatherRequestDetails.getCity())
-                .queryParam("limt", "1")
+                .queryParam("limit", "1")
                 .queryParam("appid", apiKey)
                 .build();
 
