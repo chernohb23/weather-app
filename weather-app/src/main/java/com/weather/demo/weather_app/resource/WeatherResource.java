@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/test")
 public class WeatherResource {
 
-    private WeatherService weatherService;
+    private final WeatherService weatherService;
 
     @Autowired // if this is the only constructor we make then @Autowired isn't required
     public WeatherResource(final WeatherService weatherService){
