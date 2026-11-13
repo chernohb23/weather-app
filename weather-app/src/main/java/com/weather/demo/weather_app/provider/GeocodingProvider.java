@@ -44,7 +44,7 @@ public class GeocodingProvider {
                     requestEntity,
                     GeocodingCoordinatesEntity[].class);
 
-        }catch(Exception e){
+        }catch(HttpStatusCodeException e){
             throw new Exception(e.getMessage());
         }
 

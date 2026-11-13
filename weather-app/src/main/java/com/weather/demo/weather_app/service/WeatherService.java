@@ -17,8 +17,10 @@ public class WeatherService {
         this.geocodingProvider = geocodingProvider;
     }
 
-    public WeatherResponse getWeather(final WeatherRequestDetails weatherRequestDetails){
+    public WeatherResponse getWeather(final WeatherRequestDetails weatherRequestDetails) throws Exception {
         // get lat and long
+
         final CityCoordinates cityCoordinates = geocodingProvider.getCoordinates(weatherRequestDetails);
+
     }
 }
