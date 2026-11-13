@@ -18,7 +18,7 @@ public class WeatherResource {
     }
 
     @GetMapping("/weather/{city}")
-    public WeatherResponse weather(@PathVariable("city") String city){ // don't need to specify "ResponseBody" cuz this is a @RestController
+    public WeatherResponse weather(@PathVariable("city") String city) throws Exception { // don't need to specify "ResponseBody" cuz this is a @RestController
         final WeatherRequestDetails weatherRequestDetails = WeatherRequestDetails.builder()
                 .city(city)
                 .build();
