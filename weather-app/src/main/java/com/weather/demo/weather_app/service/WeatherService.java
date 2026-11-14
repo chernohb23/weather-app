@@ -20,8 +20,10 @@ public class WeatherService {
     private final OpenWeatherTransformer openWeatherTransformer;
 
     @Autowired // if this is the only constructor we make then @Autowired isn't required
-    public WeatherService(final GeocodingProvider geocodingProvider, final GeocodingCoordinateTransformer geocodingCoordinateTransformer,
-                          final WeatherProvider weatherProvider, final OpenWeatherTransformer openWeatherTransformer){
+    public WeatherService(final GeocodingProvider geocodingProvider,
+                          final GeocodingCoordinateTransformer geocodingCoordinateTransformer,
+                          final WeatherProvider weatherProvider,
+                          final OpenWeatherTransformer openWeatherTransformer){
         this.geocodingProvider = geocodingProvider;
         this.geocodingCoordinateTransformer = geocodingCoordinateTransformer;
         this.weatherProvider = weatherProvider;
