@@ -37,7 +37,8 @@ public class WeatherService {
                 .transformToDomain(geocodingProvider.getCoordinates(weatherRequestDetails));
 
         // get weather
-        final CityWeather cityWeather = openWeatherTransformer.transformToDomain(weatherProvider.getWeather(cityCoordinates));
+        final CityWeather cityWeather = openWeatherTransformer
+                .transformToDomain(weatherProvider.getWeather(cityCoordinates));
     }
 
 }
