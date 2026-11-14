@@ -1,7 +1,6 @@
 package com.weather.demo.weather_app.provider;
 
 import com.weather.demo.weather_app.domain.CityCoordinates;
-import com.weather.demo.weather_app.entity.GeocodingCoordinatesEntity;
 import com.weather.demo.weather_app.entity.OpenWeatherResponseEntity;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -27,7 +26,7 @@ public class WeatherProvider {
 
         RestTemplate restTemplate = new RestTemplate();
 
-        ResponseEntity<OpenWeatherResponseEntity> responseEntity;
+        final ResponseEntity<OpenWeatherResponseEntity> responseEntity;
 
         HttpEntity<String> requestEntity = new HttpEntity<>((String) null); // dude
 
