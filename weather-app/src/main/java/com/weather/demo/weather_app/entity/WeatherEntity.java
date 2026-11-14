@@ -9,14 +9,11 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@JsonIgnoreProperties
 
 public class WeatherEntity {
-    @JsonProperty("id")
-    private String id;
     @JsonProperty("main")
     private String main;
     @JsonProperty("description")
     private String desc;
-    @JsonProperty("icon")
-    private String icon;
 }

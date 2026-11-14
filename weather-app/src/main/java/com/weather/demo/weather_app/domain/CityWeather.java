@@ -8,8 +8,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CityWeather {
-    private String id;
-    private String main;
-    private String desc;
-    private String icon;
+    private String weather;
+    private String details;
 }

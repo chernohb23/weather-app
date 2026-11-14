@@ -6,12 +6,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class OpenWeatherTransformer {
-    public CityWeather transformToDomain(OpenWeatherResponseEntity openWeatherResponseEntity){
+    public CityWeather transformToDomain(final OpenWeatherResponseEntity openWeatherResponseEntity){
         return CityWeather.builder()
-                .id(openWeatherResponseEntity.getWeather()[0].getId())
-                .main(openWeatherResponseEntity.getWeather()[0].getMain())
-                .desc(openWeatherResponseEntity.getWeather()[0].getDesc())
-                .icon(openWeatherResponseEntity.getWeather()[0].getIcon())
+                .weather(openWeatherResponseEntity.getWeather()[0].getMain())
+                .details(openWeatherResponseEntity.getWeather()[0].getDesc())
                 .build();
     }
 }
