@@ -39,6 +39,9 @@ public class WeatherService {
         // get weather
         final CityWeather cityWeather = openWeatherTransformer
                 .transformToDomain(weatherProvider.getWeather(cityCoordinates));
+
+        // return weather
+        return openWeatherTransformer.transformToEntity(cityWeather);
     }
 
 }
