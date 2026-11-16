@@ -10,7 +10,6 @@ import lombok.*;
 @Getter
 @Setter
 @JsonIgnoreProperties
-
 public class WeatherEntity {
     @JsonProperty("main")
     private String main;

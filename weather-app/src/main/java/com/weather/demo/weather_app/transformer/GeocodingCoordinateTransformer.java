@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class GeocodingCoordinateTransformer {
-    public CityCoordinates transformToDomain(final GeocodingCoordinatesEntity entity){
+    public CityCoordinates transformToDomain(final GeocodingCoordinatesEntity geocodingCoordinatesEntity){
         return CityCoordinates.builder()
-                .latitude(entity.getLatitude())
-                .longitude(entity.getLongitude())
+                .latitude(geocodingCoordinatesEntity.getLatitude())
+                .longitude(geocodingCoordinatesEntity.getLongitude())
                 .build();
     }
 }
